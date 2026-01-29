@@ -85,7 +85,7 @@ export default function Courses() {
                     <span className="absolute top-3 left-3 bg-amber-400 text-black text-[10px] font-black px-2 py-1 rounded uppercase tracking-tighter">Best Value</span>
                   )}
                 </div>
-                <div className="p-5 flex-grow flex flex-col">
+                <div className="p-5 grow flex flex-col">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-bold text-black text-lg h-14 line-clamp-2 leading-tight">{c.title}</h3>
                   </div>

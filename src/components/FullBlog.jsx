@@ -25,7 +25,7 @@ const FullBlogPage = () => {
       </div>
 
       {/* Article Content */}
-      <article className="max-w-3xl mx-auto px-4 mt-[-40px] bg-white p-8 md:p-12 rounded-3xl shadow-xl">
+      <article className="max-w-3xl mx-auto px-4 -mt-10 bg-white p-8 md:p-12 rounded-3xl shadow-xl">
         <p className="text-xl text-slate-600 mb-8 leading-relaxed italic">
           "The future of learning isn't just about information; it's about the application of skills in a digital-first world."
         </p>

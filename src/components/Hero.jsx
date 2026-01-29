@@ -35,7 +35,7 @@ export default function Hero() {
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="h-10 w-10 rounded-full border-2 border-white bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-xs font-medium text-black"
+                    className="h-10 w-10 rounded-full border-2 border-white bg-linear-to-br from-gray-300 to-gray-400 flex items-center justify-center text-xs font-medium text-black"
                   >
                     {String.fromCharCode(64 + i)}
                   </div>
@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           <div className="relative hidden md:block">
-            <div className="relative aspect-[4/3] max-w-lg ml-auto rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+            <div className="relative aspect-4/3 max-w-lg ml-auto rounded-2xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=450&fit=crop"
                 alt="Learning"

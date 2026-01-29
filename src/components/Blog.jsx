@@ -47,7 +47,7 @@ const BlogSection = () => {
           {posts.map((post) => (
             <div key={post.id} className="group cursor-pointer">
               {/* Image Container */}
-              <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[16/10]">
+              <div className="relative overflow-hidden rounded-2xl mb-6 aspect-16/10">
                 <img 
                   src={post.image} 
                   alt={post.title}
