@@ -81,7 +81,7 @@ export default function ContactForm() {
                                     id="first-name"
                                     required
                                     className="mt-2 block w-full rounded-md border border-black/10 bg-white px-4 py-3 text-black transition focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
-                                    placeholder="Aaisha"
+                                    placeholder="John"
                                 />
                             </div>
                             <div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
                                     id="last-name"
                                     required
                                     className="mt-2 block w-full rounded-md border border-black/10 bg-white px-4 py-3 text-black transition focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
-                                    placeholder="Khan"
+                                    placeholder="Doe"
                                 />
                             </div>
                         </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
                                 id="email"
                                 required
                                 className="mt-2 block w-full rounded-md border border-black/10 bg-white px-4 py-3 text-black transition focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
-                                placeholder="you@example.com"
+                                placeholder="john@example.com"
                             />
                         </div>
 
