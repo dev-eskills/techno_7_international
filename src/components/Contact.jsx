@@ -30,7 +30,7 @@ export default function ContactForm() {
                 form.current.reset();
             }, (error) => {
                 toast.error('❌ Failed to send. Please try again later.');
-                console.error(error.text);
+                console.error(error);
             })
             .finally(() => {
                 setIsSending(false);

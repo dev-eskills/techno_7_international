@@ -42,7 +42,7 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden md:flex md:items-center md:gap-4">
+          {/* <div className="hidden md:flex md:items-center md:gap-4">
             <a
               href="#signup"
               className="text-sm font-medium text-black hover:text-black/70 transition"
@@ -55,7 +55,7 @@ export default function Header() {
             >
               Login
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <button
@@ -87,10 +87,10 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <div className="pt-2 flex gap-3">
+            {/* <div className="pt-2 flex gap-3">
               <a href="#signup" className="text-sm font-medium text-black">Sign Up</a>
               <a href="#login" className="rounded-lg bg-black px-4 py-2 text-sm font-medium text-white">Login</a>
-            </div>
+            </div> */}
           </div>
         )}
       </nav>
