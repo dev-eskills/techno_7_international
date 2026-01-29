@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when scrolling to anchors */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
