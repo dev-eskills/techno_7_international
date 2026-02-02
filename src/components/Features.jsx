@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+
 const features = [
   {
     icon: (
@@ -55,39 +58,79 @@ const features = [
   },
 ];
 
+
 export default function Features() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
-          Our{' '}
+    <section id="services" className="py-20 bg-black text-white">
+      <div className="mx-auto max-w-6xl px-6">
+
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-xl sm:text-3xl text-center"
+        >
+          Our{" "}
           <span className="relative inline-block">
-            features special
-            <span className="absolute bottom-1 left-0 w-full h-1 bg-green-500 rounded" />
-          </span>{' '}
+            Features special
+            <motion.span
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.6 }}
+              className="absolute left-0 bottom-0 h-[3px] w-full bg-white origin-left"
+            />
+          </span>{" "}
           for you
-        </h2>
-        <p className="mt-3 text-center text-white/70 max-w-2xl mx-auto">
+        </motion.h2>
+
+        <p className="text-sm sm:text-base mt-4 text-center text-white/60 max-w-2xl mx-auto">
           Everything you need to learn effectively and advance your career.
         </p>
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((f, i) => (
-            <div
+
+        {/* List layout */}
+        <motion.ul
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.08 } },
+          }}
+          className="mt-14 divide-y divide-white/10"
+        >
+          {features.map((f) => (
+            <motion.li
               key={f.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition"
+              variants={{
+                hidden: { opacity: 0, y: 25 },
+                show: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ x: 8 }}
+              className="group flex items-start gap-6 py-7 cursor-pointer"
             >
-              <span
-                className={`inline-flex h-12 w-12 items-center justify-center rounded-full text-green-400 ${
-                  i === 1 ? 'bg-green-500/20' : 'bg-white/10'
-                }`}
-              >
+              {/* Icon */}
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white shrink-0 group-hover:bg-white/20 transition">
                 {f.icon}
               </span>
-              <h3 className="mt-4 text-lg font-semibold text-white">{f.title}</h3>
-              <p className="mt-2 text-sm text-white/70">{f.desc}</p>
-            </div>
+
+              {/* Text */}
+              <div className="flex-1">
+                <h3 className=" text-white text-base sm:text-lg">
+                  {f.title}
+                </h3>
+                <p className="text-sm text-white/60 mt-1">
+                  {f.desc}
+                </p>
+              </div>
+
+              {/* Arrow */}
+              <ArrowRight
+                size={18}
+                className="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition"
+              />
+            </motion.li>
           ))}
-        </div>
+        </motion.ul>
       </div>
     </section>
   );

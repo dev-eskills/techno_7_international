@@ -1,6 +1,23 @@
-import React from 'react';
+"use client";
 
-const BlogSection = () => {
+import React from "react";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
+
+export default function BlogSection() {
   const posts = [
     {
       id: 1,
@@ -8,7 +25,8 @@ const BlogSection = () => {
       category: "Creative Writing",
       author: "Ronald Richards",
       date: "Jan 24, 2026",
-      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800",
+      image:
+        "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: 2,
@@ -16,7 +34,8 @@ const BlogSection = () => {
       category: "Communication",
       author: "Annette Black",
       date: "Jan 20, 2026",
-      image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800",
+      image:
+        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: 3,
@@ -24,72 +43,104 @@ const BlogSection = () => {
       category: "Education",
       author: "Cody Fisher",
       date: "Jan 15, 2026",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800",
-    }
+      image:
+        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800",
+    },
   ];
 
   return (
-    <section id='blog' className="py-20 bg-white font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Our latest <span className="text-green-500 underline decoration-black underline-offset-8">blog posts</span>
-          </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">
-            Stay updated with the latest trends in education, skill development, and professional growth from our world-class mentors.
+    <section id="blog" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-3xl text-black"
+          >
+            Our latest{" "}
+            <span className="relative inline-block">
+              blog posts
+              <motion.span
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.5 }}
+                className="absolute left-0 bottom-0 h-[3px] w-full bg-black origin-left"
+              />
+            </span>
+          </motion.h2>
+
+          <p className="text-zinc-600 mt-4 max-w-xl mx-auto">
+            Stay updated with education trends, skill development tips and
+            insights from industry experts.
           </p>
         </div>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {posts.map((post) => (
-            <div key={post.id} className="group cursor-pointer">
-              {/* Image Container */}
-              <div className="relative overflow-hidden rounded-2xl mb-6 aspect-16/10">
-                <img 
-                  src={post.image} 
+            <motion.div
+              key={post.id}
+              variants={item}
+              whileHover={{ y: -8 }}
+              className="group rounded-2xl border border-black/10 bg-white shadow-sm  transition-all overflow-hidden"
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden aspect-[16/10]">
+                <motion.img
+                  src={post.image}
                   alt={post.title}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
                 />
-                <div className="absolute top-4 left-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+
+                {/* overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition" />
+
+                {/* category badge */}
+                <span className="absolute top-4 left-4 text-xs font-semibold bg-white/95 backdrop-blur px-3 py-1 rounded-full">
                   {post.category}
-                </div>
+                </span>
               </div>
 
               {/* Content */}
-              <div className="space-y-3">
-                <div className="flex items-center text-sm text-slate-400 gap-3">
+              <div className="p-6 space-y-4">
+                <div className="text-xs text-black/50 flex gap-3">
                   <span>By {post.author}</span>
-                  <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
+                  <span>•</span>
                   <span>{post.date}</span>
                 </div>
-                
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-green-500 transition-colors duration-300 leading-tight">
+
+                <h3 className="font-semibold text-lg leading-snug group-hover:text-black">
                   {post.title}
                 </h3>
-                
-                <button className="flex items-center gap-2 text-sm font-bold border-b-2 border-green-500 pb-1 pt-2 transition-all group-hover:gap-4">
-                  Read More
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {/* View All Button */}
-        <div className="mt-16 text-center">
-          <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-green-500 hover:text-black transition-colors duration-300">
+                {/* animated link */}
+                <motion.button
+                  whileHover={{ x: 6 }}
+                  className="flex items-center gap-2 text-sm font-semibold text-black"
+                >
+                  Read more →
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Button */}
+        <motion.div className="text-center mt-14" whileHover={{ scale: 1.05 }}>
+          <button className="px-8 py-3 rounded-xl bg-black text-white font-medium shadow-md">
             View All Posts
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default BlogSection;
+}

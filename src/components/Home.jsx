@@ -13,10 +13,10 @@ export const Home = () => (
         <Hero />
         <Stats />
         <WhyBest />
+        <Courses />                                         
         <Features />
-        <Courses />
         <Testimonials />
-        <BlogSection />
+        {/* <BlogSection /> */}
         <ConnectForm />
     </>
 );
