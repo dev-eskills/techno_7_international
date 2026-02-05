@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Home", href: "/", isHash: false },
+  { label: "About", href: "/about", isHash: false },
+  { label: "Courses", href: "/courses", isHash: false },
+  { label: "Course Features", href: "/features", isHash: true },
+  { label: "Testimonials", href: "/#testimonials", isHash: true },
 ];
 
 export default function Header() {
@@ -20,7 +21,7 @@ export default function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-white/10"
+      className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-white/10"
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-13 md:h-16 items-center justify-between">
@@ -36,19 +37,22 @@ export default function Header() {
 
           {/* CENTER: Nav Links */}
           <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <MotionHashLink
-                key={link.label}
-                smooth
-                to={link.href}
-                whileHover={{ y: -2 }}
-                className="group relative text-sm font-medium text-black/80 hover:text-zinc-700 transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 h-[2px] bg-black w-0 group-hover:w-full transition-all" />
-              </MotionHashLink>
-            ))}
+            {navLinks.map((link) => {
+              const LinkComponent = link.isHash ? MotionHashLink : motion(Link);
+              return (
+                <LinkComponent
+                  key={link.label}
+                  smooth={link.isHash}
+                  to={link.href}
+                  whileHover={{ y: -2 }}
+                  className="group relative text-sm font-medium text-black/80 hover:text-zinc-700 transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 h-[2px] bg-black w-0 group-hover:w-full transition-all" />
+                </LinkComponent>
+              );
+            })}
           </div>
 
           {/* RIGHT: Contact Button */}
@@ -103,17 +107,20 @@ export default function Header() {
               exit={{ opacity: 0, y: -10 }}
               className="md:hidden space-y-3 py-4 border-t border-white/10"
             >
-              {navLinks.map((link) => (
-                <HashLink
-                  key={link.label}
-                  smooth
-                  to={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block text-sm text-black"
-                >
-                  {link.label}
-                </HashLink>
-              ))}
+              {navLinks.map((link) => {
+                const LinkComponent = link.isHash ? HashLink : Link;
+                return (
+                  <LinkComponent
+                    key={link.label}
+                    smooth={link.isHash}
+                    to={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block text-sm text-black"
+                  >
+                    {link.label}
+                  </LinkComponent>
+                );
+              })}
 
               <Link
                 to="/contact"

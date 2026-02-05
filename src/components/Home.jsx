@@ -1,6 +1,6 @@
 import BlogSection from "./Blog";
 import ConnectForm from "./ConnectForm";
-import Courses from "./Courses";
+import CoursesPreview from "./CoursesPreview";
 import Features from "./Features";
 import Hero from "./Hero";
 import Stats from "./Stats";
@@ -13,7 +13,7 @@ export const Home = () => (
         <Hero />
         <Stats />
         <WhyBest />
-        <Courses />                                         
+        <CoursesPreview />                                         
         <Features />
         <Testimonials />
         {/* <BlogSection /> */}

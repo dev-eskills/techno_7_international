@@ -61,7 +61,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="services" className="py-20 bg-black text-white">
+    <section id="features" className="py-20 bg-black text-white">
       <div className="mx-auto max-w-6xl px-6">
 
         {/* Heading */}
@@ -70,9 +70,9 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-xl sm:text-3xl text-center"
         >
-          Our{" "}
+          Course{" "}
           <span className="relative inline-block">
-            Features special
+            Features
             <motion.span
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -80,11 +80,13 @@ export default function Features() {
               className="absolute left-0 bottom-0 h-[3px] w-full bg-white origin-left"
             />
           </span>{" "}
-          for you
+          designed around you
         </motion.h2>
 
         <p className="text-sm sm:text-base mt-4 text-center text-white/60 max-w-2xl mx-auto">
-          Everything you need to learn effectively and advance your career.
+          Recorded sessions, flexible schedules, community support and practical
+          projects built specially for Graphic Design, Video Editing and Digital
+          Marketing learners.
         </p>
 
         {/* List layout */}
