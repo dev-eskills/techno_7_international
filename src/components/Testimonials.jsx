@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { testimonials as baseTestimonials } from "../data/courses";
 
@@ -20,35 +18,7 @@ function StarRating({ count = 5 }) {
   );
 }
 
-/* ✅ added more reviews for better loop */
-const extra = [
-  {
-    id: 4,
-    name: "Priya Sharma",
-    role: "Frontend Developer",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
-    rating: 5,
-    text: "Clear explanations and real-world projects. Helped me land my first tech job.",
-  },
-  {
-    id: 5,
-    name: "Arjun Patel",
-    role: "Backend Engineer",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    rating: 5,
-    text: "Hands down the most practical coding program I’ve taken.",
-  },
-  {
-    id: 6,
-    name: "Neha Kapoor",
-    role: "UI Designer",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    rating: 5,
-    text: "Loved the mentors and the project feedback sessions.",
-  },
-];
-
-const testimonials = [...baseTestimonials, ...extra];
+const testimonials = [...baseTestimonials];
 
 export default function Testimonials() {
   /* duplicate list → seamless infinite loop */
