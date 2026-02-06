@@ -104,7 +104,7 @@ export default function CoursesPage() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-6 py-2 bg-black text-white rounded-md hover:bg-black/80 transition"
+                      className="flex items-center gap-2 px-6 py-2 bg-black text-white rounded-md hover:bg-black/80 transition cursor-pointer"
                     >
                       View Details
                       <ArrowRight size={16} />

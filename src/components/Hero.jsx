@@ -10,7 +10,7 @@ export default function Hero() {
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{
           backgroundImage: `url(${heroBg})`,
         }}
@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Copy */}
           <div className="space-y-6 text-white">
-            <p className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-white/70">
+            <p className="text-[20px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-white">
               Graphic Design • Video Editing • Digital Marketing
             </p>
 
@@ -36,23 +36,24 @@ export default function Hero() {
               <span className="font-semibold">
                 Graphic Design, Video Editing & Digital Marketing
               </span>{" "}
-              with combination courses, portfolio projects and{" "}
-              <span className="font-semibold">2 days free demo</span> so you
+              with combination courses, portfolio projects{" "}
+              {/* <span className="font-semibold">2 days free demo</span> */}
+               so you
               can start confidently.
             </p>
 
             {/* Quick Highlights */}
             <div className="flex flex-wrap gap-2 text-[11px] sm:text-xs">
-              <span className="rounded-full bg-white/10 px-3 py-1 border border-white/20">
+              <span className="rounded-full bg-black/30 px-3 py-1 border border-white/20">
                 Graphic Design – ₹10,000 • 3 Months
               </span>
-              <span className="rounded-full bg-white/10 px-3 py-1 border border-white/20">
+              <span className="rounded-full bg-black/30 px-3 py-1 border border-white/20">
                 Video Editing – ₹12,000 • 3 Months
               </span>
-              <span className="rounded-full bg-white/10 px-3 py-1 border border-white/20">
+              <span className="rounded-full bg-black/30 px-3 py-1 border border-white/20">
                 Digital Marketing – ₹12,000 • 3 Months
               </span>
-              <span className="rounded-full bg-white/10 px-3 py-1 border border-white/20">
+              <span className="rounded-full bg-black/30 px-3 py-1 border border-white/20">
                 Combo Courses up to ₹23,000
               </span>
             </div>
@@ -63,7 +64,7 @@ export default function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="rounded-lg bg-white px-6 py-2 text-sm sm:text-base font-semibold text-black shadow-md hover:bg-zinc-100 transition"
+                  className="rounded-lg border-2 border-gray-500 bg-white px-6 py-2 text-sm sm:text-base font-semibold text-black shadow-md hover:bg-black hover:text-white transition cursor-pointer"
                 >
                   View All Courses
                 </motion.button>
@@ -73,7 +74,7 @@ export default function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="rounded-lg border border-white/60 px-6 py-2 text-sm sm:text-base text-white bg-black hover:bg-white/10 transition"
+                  className="rounded-lg border-2 border-white/60 hover:bg-white hover:text-black hover:border-2 hover:border-gray-500 px-6 py-2 text-sm sm:text-base text-white bg-black transition cursor-pointer"
                 >
                   Book Your Demo
                 </motion.button>

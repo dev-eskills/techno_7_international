@@ -46,9 +46,9 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="relative inline-block">
-              Techno 7
+          <h1 className="text-4xl md:text-2xl mb-6">
+            <span className="font-bold relative inline-block uppercase">
+              Techno 7 International
               <motion.span
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}

@@ -45,7 +45,7 @@ export default function CourseDetailsPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate(-1)}
-          className="mb-8 flex items-center gap-2 text-sm text-black/60 hover:text-black transition"
+          className="mb-8 flex items-center gap-2 text-sm text-black/60 hover:text-black transition cursor-pointer"
         >
           <ArrowLeft size={18} />
           Back to Courses
@@ -117,7 +117,7 @@ export default function CourseDetailsPage() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-black text-white rounded-md hover:bg-black/80 transition text-lg font-semibold"
+                  className="w-full px-8 py-4 bg-black text-white rounded-md hover:bg-black/80 transition text-lg font-semibold cursor-pointer"
                 >
                   Enroll Now
                 </motion.button>

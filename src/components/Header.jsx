@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "/public/logo.png";
+import logo from "/public/fullLogo.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -23,18 +23,18 @@ export default function Header() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-white/10"
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-3">
         <div className="flex h-13 md:h-16 items-center justify-between">
           {/* LEFT: Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center">
             <img
               src={logo}
               alt="Techno7 Logo"
-              className="h-6 md:h-8 object-contain"
+              /* Removed h-24 and fixed width to allow natural scaling */
+              /* Added h-10 to h-12 for a standard navbar height */
+              className="h-10 md:h-12 w-auto object-contain"
             />
-            <span className="text-black text-base sm:text-xl">TECHNO 7</span>
           </Link>
-
           {/* CENTER: Nav Links */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => {

@@ -51,7 +51,7 @@ export default function CoursesPreview() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:flex items-center gap-2 px-6 py-2 border border-black rounded-md hover:bg-black hover:text-white transition"
+              className="hidden md:flex items-center gap-2 px-6 py-2 border border-black rounded-md hover:bg-black hover:text-white transition cursor-pointer"
             >
               View All Courses
               <ArrowRight size={16} />
@@ -118,7 +118,7 @@ export default function CoursesPreview() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-black text-white rounded-md hover:bg-black/80 transition text-sm"
+                      className="px-4 py-2 bg-black text-white rounded-md hover:bg-black/80 transition text-sm cursor-pointer"
                     >
                       View Details
                     </motion.button>

@@ -103,7 +103,7 @@ export default function Courses() {
                     </div>
 
                     <Link to="/contact">
-                      <button className="px-8 py-2 bg-black text-white rounded-md hover:opacity-80 transition">
+                      <button className="px-8 py-2 bg-black text-white rounded-md hover:opacity-80 transition cursor-pointer">
                         Enroll Now
                       </button>
                     </Link>
