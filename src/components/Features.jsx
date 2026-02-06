@@ -1,137 +1,73 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import {  Briefcase, Layout, Palette, PlayCircle, Rocket, Users } from 'lucide-react';
 
-const features = [
+const services = [
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-      </svg>
-    ),
-    title: 'Recorded Sessions',
-    desc: 'Watch lessons anytime. Replay, rewind, and learn at your own pace.',
+    icon: <Palette className="h-6 w-6" />,
+    title: 'Portfolio Development',
+    desc: 'Transform your course assignments into a high-end portfolio for Design & Marketing roles.',
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-      </svg>
-    ),
-    title: 'Schedule Learning',
-    desc: 'Plan your study time with a flexible calendar that fits your life.',
+    icon: <PlayCircle className="h-6 w-6" />,
+    title: 'Pro Post-Production',
+    desc: 'Go beyond basic cuts. Master advanced color grading and motion graphics for Video Editing.',
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-      </svg>
-    ),
-    title: 'Study Community',
-    desc: 'Connect with peers, share projects, and get feedback from instructors.',
+    icon: <Rocket className="h-6 w-6" />,
+    title: 'Digital Growth Strategy',
+    desc: 'Learn the data-driven side of Marketing: SEO, Meta Ads, and AI-driven campaign scaling.',
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-      </svg>
-    ),
-    title: 'Interactive Quizzes',
-    desc: 'Test your knowledge with quizzes and assignments after each module.',
+    icon: <Layout className="h-6 w-6" />,
+    title: 'Live Workshop Labs',
+    desc: 'Join weekly live design sprints and marketing hackathons to test your skills under pressure.',
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-      </svg>
-    ),
-    title: 'Practical Learning',
-    desc: 'Hands-on projects and real-world scenarios to build portfolio-ready skills.',
+    icon: <Briefcase className="h-6 w-6" />,
+    title: 'Agency Placements',
+    desc: 'We connect our best Graphic Designers and Marketers with top digital agencies.',
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: 'Daily Challenges',
-    desc: 'Small daily tasks to keep you motivated and reinforce what you learn.',
+    icon: <Users className="h-6 w-6" />,
+    title: 'Client Simulation',
+    desc: 'Work on real-world briefs to learn how to handle client feedback and revisions.',
   },
 ];
-
-
-export default function Features() {
+export default function InstituteServices() {
   return (
-    <section id="services" className="py-20 bg-black text-white">
+    <section id="features" className="py-24 bg-zinc-950 text-white">
       <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Our Academic <span className="text-white">Commitment</span>
+          </h2>
+          <p className="mt-4 text-zinc-400 max-w-xl mx-auto">
+            Techno 7 International provides a comprehensive ecosystem designed to transform students into industry-ready professionals.
+          </p>
+        </div>
 
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-xl sm:text-3xl text-center"
-        >
-          Our{" "}
-          <span className="relative inline-block">
-            Features special
-            <motion.span
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 0.6 }}
-              className="absolute left-0 bottom-0 h-[3px] w-full bg-white origin-left"
-            />
-          </span>{" "}
-          for you
-        </motion.h2>
-
-        <p className="text-sm sm:text-base mt-4 text-center text-white/60 max-w-2xl mx-auto">
-          Everything you need to learn effectively and advance your career.
-        </p>
-
-        {/* List layout */}
-        <motion.ul
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.08 } },
-          }}
-          className="mt-14 divide-y divide-white/10"
-        >
-          {features.map((f) => (
-            <motion.li
-              key={f.title}
-              variants={{
-                hidden: { opacity: 0, y: 25 },
-                show: { opacity: 1, y: 0 },
-              }}
-              whileHover={{ x: 8 }}
-              className="group flex items-start gap-6 py-7 cursor-pointer"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-gray-500/50 transition-all group cursor-pointer"
             >
-              {/* Icon */}
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white shrink-0 group-hover:bg-white/20 transition">
-                {f.icon}
-              </span>
-
-              {/* Text */}
-              <div className="flex-1">
-                <h3 className=" text-white text-base sm:text-lg">
-                  {f.title}
-                </h3>
-                <p className="text-sm text-white/60 mt-1">
-                  {f.desc}
-                </p>
+              <div className="w-12 h-12 rounded-lg bg-white/70 flex items-center justify-center text-gray-950 mb-6 group-hover:scale-110 transition-transform">
+                {service.icon}
               </div>
-
-              {/* Arrow */}
-              <ArrowRight
-                size={18}
-                className="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition"
-              />
-            </motion.li>
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                {service.desc}
+              </p>
+            </motion.div>
           ))}
-        </motion.ul>
+        </div>
       </div>
     </section>
   );
 }
+

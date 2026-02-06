@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import logo from "../../public/logo.png";
 
 const quickLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Courses", href: "/#courses" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/#home", isHash: true },
+  { label: "About", href: "/about", isHash: false },
+  { label: "Course Features", href: "/#features", isHash: true },
+  { label: "Courses", href: "/courses", isHash: false },
+  { label: "Contact", href: "/contact", isHash: false },
 ];
 
 const resources = [
@@ -84,7 +85,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2">
               {quickLinks.map((l) => (
                 <li key={l.label}>
-                  {l.href.startsWith("/#") || l.href.startsWith("/contact") ? (
+                  {l.isHash ? (
                     <MotionHashLink
                       smooth
                       to={l.href}
@@ -93,12 +94,12 @@ export default function Footer() {
                       {l.label}
                     </MotionHashLink>
                   ) : (
-                    <a
-                      href={l.href}
+                    <Link
+                      to={l.href}
                       className="text-sm text-white/70 hover:text-white transition"
                     >
                       {l.label}
-                    </a>
+                    </Link>
                   )}
                 </li>
               ))}
