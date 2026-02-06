@@ -17,6 +17,6 @@ export const Home = () => (
         <Features />
         <Testimonials />
         {/* <BlogSection /> */}
-        <ConnectForm />
+        {/* <ConnectForm /> */}
     </>
 );

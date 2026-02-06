@@ -127,7 +127,7 @@ export default function CourseDetailsPage() {
         </motion.div>
 
         {/* Course Features */}
-        {course.features && (
+        {/* {course.features && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,6 +146,38 @@ export default function CourseDetailsPage() {
                 >
                   <Check size={20} className="text-green-600 shrink-0" />
                   <span className="text-black">{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )} */}
+        {/* Course Features Section */}
+        {course.features && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl font-bold mb-8">Course Curriculum & Details</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {course.features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100 hover:border-black/10 transition-colors"
+                >
+                  <div className="mt-1 bg-green-100 p-1 rounded-full">
+                    <Check size={16} className="text-green-600 shrink-0" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-black mb-1">{feature.title}</h4>
+                    <p className="text-sm text-black/70 leading-relaxed">
+                      {feature.desc}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>

@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { MapPin } from "lucide-react";
 
 export default function ContactForm() {
   const form = useRef();
@@ -59,7 +60,7 @@ export default function ContactForm() {
           </p>
 
           <div className="text-white/70 space-y-2">
-            <p>
+            <p className="flex gap-1"><MapPin size={15} className="mt-1" />
               4th Floor, Apollo Avenue, Above Nafees Restaurant,Guitar Square,
               Old Palasia, Indore
             </p>
